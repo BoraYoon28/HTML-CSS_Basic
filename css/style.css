@@ -1,0 +1,135 @@
+@import url(/css/reset.css);
+@import url(/css/theme.css);
+
+*,
+::after,
+::before {
+	box-sizing: border-box;
+	font-family: "Noto Sans KR", sans-serif;
+}
+
+.screen_out {
+	position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: polygon(0 0, 0 0, 0 0);
+}
+
+.flex {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+}
+
+button {
+	background: none;
+	border: none;
+	padding: 0;
+}
+
+body {
+	margin: 0 auto;
+	max-width: 768px;
+	min-height: 100vh;
+	padding: 0 4rem;
+}
+
+header {
+	justify-content: space-between;
+	margin-top: 1.25rem;
+	padding: 1.25rem 0;
+}
+
+main {
+	text-align: center;
+	background-color: rgb(255, 188, 197);
+}
+
+footer {
+	background-color: rgb(254, 134, 168);
+
+}
+
+.logo {
+	width: 3.8125rem;
+	height: 3.8125rem;
+}
+
+.search-field {
+	margin-top: 3.75rem;
+}
+
+section {
+	margin-top: 3.74rem;
+}
+
+.tab-menu {
+	margin: 0.9375rem 0 0.625rem 0;
+	justify-content: center;
+}
+
+.story {
+	padding: 1.88rem;
+	align-items: flex-start;
+}
+
+.story-title {
+	margin-right: 0.62rem;
+	padding-top: 0.62rem;
+	white-space: nowrap;
+	order: 2;
+	font-weight: bold;
+}
+
+.story-photo {
+	width: 12.5rem;
+	height: 12.5rem;
+	margin-right: 14%;
+	order: 1;
+}
+
+.stroy-description {
+	padding-top: 0.62rem;
+	text-align: left;
+	order: 3;
+}
+
+.content-present h2 {
+	margin-bottom: 0.625rem;
+}
+
+.present {
+	padding: 1.25rem 3.125rem 1.25rem 1.875rem;
+	justify-content: space-between;
+}
+
+.present-description {
+	text-align: left;
+}
+
+.content-banner {
+	display: flex;
+	flex-flow: column;
+	gap: 0.625rem;
+	margin-top: 3.75rem;
+	padding: 0.625rem 3rem 1.5625rem 3rem;
+}
+
+.question-list {
+	padding: 0.625rem 5rem 0rem 5rem;
+}
+
+.question {
+	justify-content: space-between;
+}
+
+.expand-less {
+	transform: rotate(180deg);
+}
+
+.answer {
+	margin-top: 0.625rem;
+	text-align: left;
+}
