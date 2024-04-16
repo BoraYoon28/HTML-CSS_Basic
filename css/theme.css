@@ -5,12 +5,6 @@
 	src : url(/font/NotoSansKR-Regular.ttf);
 }
 
-@font-face {
-	font-family: "Noto Sans KR", sans-serif;
-	font-style: bold;
-	src: url(/font/NotoSansKR-Bold.ttf);
-}
-
 :root {
   /* color */
   --black: #000000;
@@ -38,16 +32,11 @@
 	*/
 
   /* heading/text */
-  --heading-base: 1rem; /* 16px */
-  --heading-md: 1.25rem; /* 20px */
-  --heading-lg: 1.75rem; /* 28px */
-  --heading-xl: 2.25rem; /* 36px */
-  --heading-xl: 3.25rem; /* 52px */
+  --heading-md: clamp(0.9rem, 3vw, 1.5rem);
+  --heading-lg: clamp(1.5rem, 5vw, 3.25rem);
 	
-  --text-sm: 0.75rem; /* 12px */
-  --text-base: 1rem; /* 16px */
-  --text-md: 1.125rem; /* 18px */
-  --text-lg: 1.25rem; /* 20px */
-  --text-xl: 1.75rem; /* 28px */
-  --text-xxl: 2.25rem; /* 36px */
+  --text-sm: clamp(0.6rem, 3vw, 0.75rem);
+  --text-base: clamp(0.75rem ,3vw, 1rem);
+  --text-lg: clamp(0.9rem, 4vw, 1.25rem);
+  --text-xxl: clamp(1.25rem, 5vw, 2rem);
 }

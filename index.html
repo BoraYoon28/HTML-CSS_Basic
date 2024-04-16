@@ -13,22 +13,22 @@
 		<h1>
 			<img class="logo" src="/image/H&C_logo.png" alt="HTML/CSS 웹 접근성 교육 로고">
 		</h1>
-		<button type="button">
+		<button type="button" class="button-menu">
 			<img src="/image/MWEB/Button/Menu.svg" alt="메뉴">
 		</button>
-		<div hidden>
+		<div class="menu flex">
 			<nav>
-				<h2>메인 메뉴</h2>
-				<ul>
+				<h2 class="screen_out">메인 메뉴</h2>
+				<ul class="flex">
 					<li>menu_1</li>
 					<li>menu_2</li>
 					<li>menu_3</li>
 					<li>menu_4</li>
 				</ul>
 			</nav>
-			<div>
-				<button type="button">로그인</button>
-				<button type="button">회원가입</button>
+			<div class="button-sign">
+				<button type="button" class="button-sign-in">로그인</button>
+				<button type="button" class="button-sign-up">회원가입</button>
 			</div>
 		</div>
 	</header>
@@ -37,44 +37,78 @@
 			<legend class="screen_out">검색</legend>
 			<label for="searchStrory" class="screen_out">우니의 스토리 검색</label>
 			<input type="search" placeholder="검색어를 입력해주세요." id="searchStrory">
-			<button type="button">
+			<button type="button" class="search-button">
 				<span class="material-symbols-outlined">search</span>
 				<span class="screen_out">검색</span>
 			</button>
 		</fieldset>
 		<section class="content-story">
-			<h2>우니의 스토리</h2>
-			<ul class="tab-menu flex">
-				<li>월간</li>
-				<li>연간</li>
-			</ul>
-			<article class="story flex">
-				<h3 class="story-title">4월</h3>
-				<img class="story-photo" src="/image/photo_april.jpeg" alt="머리에 스티커 붙은 우니">
-				<div class="stroy-description">
-					<p>머리에 스티커 붙이고 있는 우니</p>
-					<p>"빨리 떼줘!"</p>
-				</div>
-			</article>
+			<div class="flex">
+				<h2 class="content-title">우니의 스토리</h2>
+				<ul class="tab-menu flex">
+					<li><button type="button" class="tab-button active">월간</button></li>
+					<li><button type="button" class="tab-button">연간</button></li>
+				</ul>
+			</div>
+			<div class="grid">
+				<article class="story flex">
+					<h3 class="story-title">4월</h3>
+					<img class="story-photo" src="/image/photo_april.jpeg" alt="머리에 스티커 붙은 우니">
+					<div class="stroy-description">
+						<p>머리에 스티커 붙이고 있는 우니</p>
+						<p>"빨리 떼줘!"</p>
+					</div>
+				</article>
+				<article class="story flex">
+					<h3 class="story-title">3월</h3>
+					<img class="story-photo" src="/image/photo_march.jpeg" alt="머리에 스티커 붙은 우니">
+					<div class="stroy-description">
+						<p>새로 산 러그(라고 쓰고 스크래쳐라고 읽는다)가 맘에 쏙 든 우니</p>
+						<p>“긁는 느낌 좋은데?”</p>
+					</div>
+				</article>
+				<article class="story flex">
+					<h3 class="story-title">2월</h3>
+					<img class="story-photo" src="/image/photo_february.jpeg" alt="머리에 스티커 붙은 우니">
+					<div class="stroy-description">
+						<p>일하는 집사 기다리다가 잠든 우니</p>
+						<p>"넌 일하지? 난 잔다~"</p>
+					</div>
+				</article>
+			</div>
 		</section>
 		<section class="content-present">
-			<h2>우니의 선물</h2>
+			<h2 class="content-title">우니의 선물</h2>
 			<article class="present flex">
 				<div class="present-description">
-					<p>우니한테 간식 주기</p>
-					<p>우니한테 간식을 줄 수 있습니다. (간식은 직접 준비해주세요!)</p>
+					<p class="present-title">우니한테 간식 주기</p>
+					<p>우니한테 간식을 줄 수 있습니다.(간식은 직접 준비해주세요!)</p>
 				</div>
-				<p>5,000원</p>
+				<p class="present-price">5,000원</p>
+			</article>
+			<article class="present flex">
+				<div class="present-description">
+					<p class="present-title">우니를 1분동안 안고 있기</p>
+					<p>우니를 1분동안 안고 위로 받을 수 있습니다.(다만 우니가 도망치면 그대로 선물 끝!)</p>
+				</div>
+				<p class="present-price">10,000원</p>
+			</article>
+			<article class="present flex">
+				<div class="present-description">
+					<p class="present-title">장기자랑하는 우니 관람</p>
+					<p>앉아, 하이파이브하는 우니를 볼 수 있습니다.(사진, 동영상 촬용은 불가합니다~)</p>
+				</div>
+				<p class="present-price">집사 기분따라</p>
 			</article>
 		</section>
-		<div class="content-banner">
+		<div class="content-banner flex">
 			<img class="banner-image" src="/image/banner_image.png" alt="사랑스러운 우니를 더 보고싶다면?">
 			<button type="button" class="banner-button">더보기</button>
 		</div>
 		<section class="content-question">
-			<h2>자주 묻는 질문</h2>
-			<ul class="question-list">
-				<li>
+			<h2 class="content-title">자주 묻는 질문</h2>
+			<div class="question-list">
+				<div>
 					<button type="button" class="question flex">
 						<p>우니는 몇 살인가요?</p>
 						<span class="material-symbols-outlined expand-less">expand_more</span>
@@ -82,15 +116,233 @@
 					<div class="answer">
 						<p>미운 3살 입니다~</p>
 					</div>
-				</li>
-			</ul>
+				</div>
+				<div>
+					<button type="button" class="question flex">
+						<p>우니는 남자아이 인가요? 여자아이 인가요?</p>
+						<span class="material-symbols-outlined expand-less">expand_more</span>
+					</button>
+					<div class="answer">
+						<p>미묘의 남자아이입니다!</p>
+					</div>
+				</div>
+				<div>
+					<button type="button" class="question flex">
+						<p>우니가 제일 좋아하는 것은 뭔가요?</p>
+						<span class="material-symbols-outlined expand-less">expand_more</span>
+					</button>
+					<div class="answer">
+						<p>저요!..라고 하고싶지만 역시 간식일듯 합니다ㅎㅎ</p>
+					</div>
+				</div>
+				<div>
+					<button type="button" class="question flex">
+						<p>우니는 애교가 많나요?</p>
+						<span class="material-symbols-outlined expand-less">expand_more</span>
+					</button>
+					<div class="answer">
+						<p>얼굴이 애교입니다!</p>
+					</div>
+				</div>
+			</div>
 		</section>
 	</main>
 	<footer>
-		<section>
-			<h2>part</h2>
+		<section class="grid">
+			<article class="part">
+				<h2 class="part-name">1파트(교육)</h2>
+				<div class="part-member">
+					<button type="button" class="member-name flex">
+						<p>칸(kan.k - 파트장)</p>
+						<span class="material-symbols-outlined expand-less">expand_more</span>
+					</button>
+					<div class="member-description">
+						<p>내용</p>
+					</div>
+				</div>
+				<div class="part-member">
+					<button type="button" class="member-name flex">
+						<p>웨인(wayne.t)</p>
+						<span class="material-symbols-outlined expand-less">expand_more</span>
+					</button>
+					<div class="member-description">
+						<p>내용</p>
+					</div>
+				</div>
+				<div class="part-member">
+					<button type="button" class="member-name flex">
+						<p>로웰(lowell.0704)</p>
+						<span class="material-symbols-outlined expand-less">expand_more</span>
+					</button>
+					<div class="member-description">
+						<p>내용</p>
+					</div>
+				</div>
+				<div class="part-member">
+					<button type="button" class="member-name flex">
+						<p>맥스(max.0420)</p>
+						<span class="material-symbols-outlined expand-less">expand_more</span>
+					</button>
+					<div class="member-description">
+						<p>내용</p>
+					</div>
+				</div>
+				<div class="part-member">
+					<button type="button" class="member-name flex">
+						<p>마리(mari.gold)</p>
+						<span class="material-symbols-outlined expand-less">expand_more</span>
+					</button>
+					<div class="member-description">
+						<p>내용</p>
+					</div>
+				</div>
+			</article>
+			<article class="part">
+				<h2 class="part-name">2파트()</h2>
+				<div class="part-member">
+					<button type="button" class="member-name flex">
+						<p>이든(eden.m - 파트장)</p>
+						<span class="material-symbols-outlined expand-less">expand_more</span>
+					</button>
+					<div class="member-description">
+						<p>내용</p>
+					</div>
+				</div>
+				<div class="part-member">
+					<button type="button" class="member-name flex">
+						<p>리암(liam.j)</p>
+						<span class="material-symbols-outlined expand-less">expand_more</span>
+					</button>
+					<div class="member-description">
+						<p>내용</p>
+					</div>
+				</div>
+				<div class="part-member">
+					<button type="button" class="member-name flex">
+						<p>카일라(kayla.k)</p>
+						<span class="material-symbols-outlined expand-less">expand_more</span>
+					</button>
+					<div class="member-description">
+						<p>내용</p>
+					</div>
+				</div>
+				<div class="part-member">
+					<button type="button" class="member-name flex">
+						<p>델리(deli.ce)</p>
+						<span class="material-symbols-outlined expand-less">expand_more</span>
+					</button>
+					<div class="member-description">
+						<p>내용</p>
+					</div>
+				</div>
+				<div class="part-member">
+					<button type="button" class="member-name flex">
+						<p>웬디(wendy.112)</p>
+						<span class="material-symbols-outlined expand-less">expand_more</span>
+					</button>
+					<div class="member-description">
+						<p>내용</p>
+					</div>
+				</div>
+				<div class="part-member">
+					<button type="button" class="member-name flex">
+						<p>폴라(polar.09)</p>
+						<span class="material-symbols-outlined expand-less">expand_more</span>
+					</button>
+					<div class="member-description">
+						<p>내용</p>
+					</div>
+				</div>
+			</article>
+			<article class="part">
+				<h2 class="part-name">3파트()</h2>
+				<div class="part-member">
+					<button type="button" class="member-name flex">
+						<p>아마라(amara.w - 파트장)</p>
+						<span class="material-symbols-outlined expand-less">expand_more</span>
+					</button>
+					<div class="member-description">
+						<p>내용</p>
+					</div>
+				</div>
+				<div class="part-member">
+					<button type="button" class="member-name flex">
+						<p>제니(jenny.c)</p>
+						<span class="material-symbols-outlined expand-less">expand_more</span>
+					</button>
+					<div class="member-description">
+						<p>내용</p>
+					</div>
+				</div>
+				<div class="part-member">
+					<button type="button" class="member-name flex">
+						<p>헤이즐(hazel.j)</p>
+						<span class="material-symbols-outlined expand-less">expand_more</span>
+					</button>
+					<div class="member-description">
+						<p>내용</p>
+					</div>
+				</div>
+				<div class="part-member">
+					<button type="button" class="member-name flex">
+						<p>엘리자(eliza.d)</p>
+						<span class="material-symbols-outlined expand-less">expand_more</span>
+					</button>
+					<div class="member-description">
+						<p>내용</p>
+					</div>
+				</div>
+				<div class="part-member">
+					<button type="button" class="member-name flex">
+						<p>제임스(james.42)</p>
+						<span class="material-symbols-outlined expand-less">expand_more</span>
+					</button>
+					<div class="member-description">
+						<p>내용</p>
+					</div>
+				</div>
+			</article>
+			<article class="part">
+				<h2 class="part-name">4파트()</h2>
+				<div class="part-member">
+					<button type="button" class="member-name flex">
+						<p>민디(mindy.b - 파트장)</p>
+						<span class="material-symbols-outlined expand-less">expand_more</span>
+					</button>
+					<div class="member-description">
+						<p>내용</p>
+					</div>
+				</div>
+				<div class="part-member">
+					<button type="button" class="member-name flex">
+						<p>칸(kan.k)</p>
+						<span class="material-symbols-outlined expand-less">expand_more</span>
+					</button>
+					<div class="member-description">
+						<p>내용</p>
+					</div>
+				</div>
+				<div class="part-member">
+					<button type="button" class="member-name flex">
+						<p>이든(eden.m)</p>
+						<span class="material-symbols-outlined expand-less">expand_more</span>
+					</button>
+					<div class="member-description">
+						<p>내용</p>
+					</div>
+				</div>
+				<div class="part-member">
+					<button type="button" class="member-name flex">
+						<p>아마라(amara.w)</p>
+						<span class="material-symbols-outlined expand-less">expand_more</span>
+					</button>
+					<div class="member-description">
+						<p>내용</p>
+					</div>
+				</div>
+			</article>
 		</section>
-		<div>copyright</div>
+		<div class="copyright">Copyright 2024 mari.gold All rights reserved.</div>
 	</footer>
 </body>
 </html>
