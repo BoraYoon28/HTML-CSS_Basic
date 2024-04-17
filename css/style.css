@@ -26,13 +26,22 @@
 }
 
 .material-symbols-outlined {
-	font-size: min(8vw, 30px);
+	font-size: min(8vw, 1.875rem);
+}
+
+.hidden {
+	display: none;
 }
 
 button {
 	background: none;
 	border: none;
 	padding: 0;
+	cursor: pointer;
+}
+
+a {
+	text-decoration: none;
 }
 
 body {
@@ -45,24 +54,79 @@ body {
 header {
 	justify-content: space-between;
 	margin-top: min(8%, 2.5rem);
-	padding: min(5%, 0.9375rem) 0;
 }
 
 main {
 	text-align: center;
 }
 
-.logo {
+.logo img {
 	width: clamp(2rem,10vw, 4rem);
 }
 
-.button-menu img {
-	width: max(5.5vw,1.3rem);
+.button-menu:focus {
+	outline-offset: 0.25rem;
 }
 
-/* .menu {
+.button-menu img {
+	width: min(5.5vw, 2rem);
+}
+
+.menu-display {
 	display: none;
-} */
+	position: absolute;
+	top: clamp(2rem,10vw, 4rem);
+	margin-top: min(8%, 2.5rem);
+}
+
+.menu-mobile {
+	width: calc(100vw - max(20vw, 5.25rem));
+	height: 55vh;
+	background-color: var(--white);
+	text-align: center;
+	padding-top: 5vh;
+}
+
+.menu-list {
+	flex-direction: column;
+}
+
+.menu-list li {
+	width: 60%;
+	height: 9vh;
+	line-height: 9vh;
+	border-bottom: 1px solid var(--gray-100);
+}
+
+.menu-list a:focus {
+	outline-offset: 1rem;
+}
+
+.button-sign {
+	height: 14vh;
+	white-space: nowrap;
+	justify-content: center;
+}
+
+.button-sign button, a {
+	width: 5rem;
+	border-radius: 0.625rem;
+	font-size: var(--text-base);
+}
+
+.button-sign-in {
+	height: 2.5rem;
+	color: var(--primary, #F8E856);
+	border: 1px solid var(--primary, #F8E856);
+	margin-right: 0.7rem;
+}
+
+.button-sign-up {
+	line-height: 2.5rem;
+	color: var(--white);
+	text-align: center;
+	background: var(--primary, #F8E856);
+}
 
 .search-field {
 	margin-top: 8vh;
@@ -75,11 +139,11 @@ main {
 	border: 1.5px solid var(--gray-300, #A6A6A6);
 	border-radius: 10vw;
 	line-height: min(6vh, 2.5rem);
+	padding: 0 min(5vw, 1.25rem);
 }
 
 input::placeholder {
 	color: var(--gray-300, #A6A6A6);	
-	padding-left: min(5vw, 1.25rem);
 	font-size: var(--text-base);
 }
 
@@ -98,6 +162,10 @@ section {
 	line-height: 140%;
 	text-align: center;
 	white-space: nowrap;
+}
+
+.content-story > div {
+	flex-direction: column;
 }
 
 .tab-menu {
@@ -125,6 +193,7 @@ section {
 	background-color: var(--secondary);
 	border-radius: 0.5rem;
 	border: 1px solid var(--primary, #F8E856);
+	margin-bottom: 0.9375rem;
 }
 
 .story-title {
@@ -152,6 +221,8 @@ section {
 	padding: min(4vw, 2rem) min(7vw, 3rem);
 	border-radius: 0.5rem;
 	border: 1px solid var(--primary, #F8E856);
+	margin-bottom: 0.9375rem;
+	flex-direction: column;
 }
 
 .present-title {
@@ -172,16 +243,18 @@ section {
 	padding-bottom: 2vh;
 	background: var(--secondary, #FFFEF1);
 	border-radius: 0.5rem;
+	flex-direction: column;
 }
 
 .banner-image {
 	width: min(70vw, 35rem);
 }
 
-.banner-button {
+.banner-link {
 	margin-top: 0.625rem;
-	padding: min(1.5vw, 0.7rem) min(8vw, 3rem);
-	border-radius: 1.5vw;
+	width: min(25vw, 8rem);
+	line-height: min(10vw, 3rem);
+	border-radius: min(1.5vw, 0.75rem);
 	background-color: var(--primary, #F8E856);
 	color: var(--white);
 	font-size: var(--text-lg);
@@ -197,26 +270,45 @@ section {
 .question {
 	width: 100%;
 	justify-content: space-between;
+	height: min(8vw, 2.3rem);
 }
 
 .question p {
+	margin-right: 0.8rem;
 	font-size: var(--text-lg);
 	font-weight: 700;
+	text-align: left;
 }
 
-.expand-less {
+.expand-more {
+	transition: transform 0.2s linear;
+}
+
+.expanded {
 	transform: rotate(180deg);
+	transition: transform 0.2s linear;
 }
 
 .answer {
+	display: none;
 	margin-top: 0.625rem;
 	text-align: left;
+}
+
+.footer-title {
+	font-size: var(--heading-md);
+	font-weight: 700;
+	line-height: 140%;
+	text-align: center;
+	white-space: nowrap;
+	margin-bottom: 0.625rem;
 }
 
 .part {
 	padding: min(7vw, 1.875rem);
 	background: var(--secondary, #FFFEF1);
 	border-radius: 0.5rem;
+	margin-bottom: 1rem;
 }
 
 .part-name {
@@ -234,6 +326,7 @@ section {
 
 .member-name {
 	width: 100%;
+	height: min(8vw, 2.3rem);
 	justify-content: space-between;
 }
 
@@ -242,11 +335,20 @@ section {
 	font-weight: 700;
 }
 
+.member-description {
+	display: none;
+}
+
 .copyright {
 	margin: 8vh 0;
 	color: var(--gray-500, #6B6B6B);
 	font-size: var(--text-sm);
 	text-align: center;
+}
+
+.toggle-display {
+	height: min(8vw, 2.3rem);
+	display: block;
 }
 
 @media (min-width: 1024px){
@@ -267,44 +369,42 @@ section {
 		display: none;
 	}
 
-	.menu {
+	.menu-display {
+		display: block;
+		position: static;
+		margin: 0;
+	}
+
+	.menu-pc {
 		width: 45rem;
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
 		justify-content: space-between;
 	}
-	.menu ul {
+	.menu-list {
 		width: 26.75rem;
+		flex-direction: row;
 		justify-content: space-between;
+	}
+
+	.menu-list li {
+		height: fit-content;
+		line-height: 160%;
+		border-bottom: none;
 	}
 
 	.button-sign {
-		white-space: nowrap;
-	}
-
-	.button-sign button {
-		width: 5rem;
-		height: 2.5rem;
-		border-radius: 0.625rem;
-		font-size: var(--text-base);
-	}
-
-	.button-sign-in {
-		color: var(--primary, #F8E856);
-		border: 1px solid var(--primary, #F8E856);
-		margin-right: 0.7rem;
-	}
-
-	.button-sign-up {
-		color: var(--white);
-		background: var(--primary, #F8E856);
+		height: auto;
 	}
 
 	.tab-menu button {
 		padding: 0.1875rem 1.875rem;
 	}
 
-	.content-story > .flex {
+	.content-story > div {
+		flex-direction: row;
 		justify-content: center;
-		margin-bottom: 0.625rem;
 	}
 
 	.content-story > .grid {
@@ -313,7 +413,7 @@ section {
 	}
 
 	.content-title {
-		margin: 0 2.5rem;
+		margin: 0 2.5rem 0.625rem 2.5rem;
 	}
 
 	.story {
@@ -337,6 +437,7 @@ section {
 	}
 
 	.present {
+		flex-direction: row;
 		justify-content: space-between;
 		margin-bottom: 0.625rem;
 	} 
@@ -350,6 +451,7 @@ section {
 	}
 
 	.content-banner {
+		flex-direction: row;
 		justify-content: space-between;
 		padding: 0rem 3rem;
 	}
@@ -363,7 +465,7 @@ section {
 		border-radius: 0.625rem;
 	}
 
-	.content-title {
+	.content-question .content-title {
 		margin-bottom: 1.25rem;
 	}
 
@@ -374,6 +476,10 @@ section {
 	footer .grid {
 		grid-template-columns: repeat(4, 1fr);
 		gap: 1.25rem;
+	}
+
+	.footer-title {
+		grid-column: 1/5;
 	}
 
 	.part {
