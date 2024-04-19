@@ -217,6 +217,11 @@ section {
 	word-break: keep-all;
 }
 
+#storyPanelYearly p {
+	height: 469.99px;
+	line-height: 469.88px;
+}
+
 .present {
 	padding: min(4vw, 2rem) min(7vw, 3rem);
 	border-radius: 0.5rem;
