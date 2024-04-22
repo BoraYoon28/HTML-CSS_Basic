@@ -34,11 +34,13 @@ tabButtons.forEach((button, index) => {
 	button.addEventListener("click", () => {
 		tabButtons.forEach(otherButton => {
 			otherButton.classList.remove("active");
+			otherButton.ariaSelected = "false"
 		});
 		tabPanels.forEach(otherPanel => {
 			otherPanel.classList.remove("display");
 		});
 		tabButtons[index].classList.add("active");
+		tabButtons[index].ariaSelected = "true"
 		tabPanels[index].classList.add("display");
 	});
 });
