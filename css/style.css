@@ -29,10 +29,6 @@
 	font-size: min(8vw, 1.875rem);
 }
 
-.hidden {
-	display: none;
-}
-
 button {
 	background: none;
 	border: none;
@@ -185,6 +181,16 @@ section {
 .active {
 	color: var(--primary);
 	border-color: var(--primary);
+}
+
+.box-story {
+	display: none;
+	grid-template-rows: repeat(3, 1fr);
+	gap: 1.25rem;
+}
+
+.display {
+	display: grid;
 }
 
 .story {
@@ -357,10 +363,6 @@ section {
 }
 
 @media (min-width: 1024px){
-	.grid {
-		display: grid;
-	}
-
 	body {
 		width: 58.75rem;
 		padding: 0;
@@ -412,9 +414,15 @@ section {
 		justify-content: center;
 	}
 
-	.content-story > .grid {
+	.box-story {
+		display: none;
 		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: none;
 		gap: 1.25rem;
+	}
+
+	.display {
+		display: grid;
 	}
 
 	.content-title {

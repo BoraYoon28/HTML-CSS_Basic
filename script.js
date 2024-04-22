@@ -1,17 +1,14 @@
 
 //resize
 const menuRW = document.querySelector(".menu-pc");
-const storyContent = document.querySelector(".box-story");
 
 window.onresize = function singularResize() {
 	const windowWidth = window.innerWidth;
 
 	if(windowWidth >= 1024){
 		menuRW.className = "menu-pc";
-		storyContent.className += " grid"		
 	} else {
 		menuRW.className = "menu-mobile";
-		storyContent.className = "";
 	}
 }
 
@@ -29,12 +26,29 @@ menuButton.addEventListener("click", function () {
 	}
 });
 
+//tab-menu
+const tabButtons = document.querySelectorAll(".tab-button");
+const tabPanels = document.querySelectorAll(".box-story")
+
+tabButtons.forEach((button, index) => {
+	button.addEventListener("click", () => {
+		tabButtons.forEach(otherButton => {
+			otherButton.classList.remove("active");
+		});
+		tabPanels.forEach(otherPanel => {
+			otherPanel.classList.remove("display");
+		});
+		tabButtons[index].classList.add("active");
+		tabPanels[index].classList.add("display");
+	});
+});
+
+
+
 //toggle accordion
 const toggleButton = document.querySelectorAll(".toggle-button");
 const toggleDescription = document.querySelectorAll(".toggle-detail")
 const toggleIcon = document.querySelectorAll(".expand-more")
-
-console.log(toggleButton[1]);
 
 for (let i = 0; i < toggleButton.length; i++) {
 	toggleButton[i].addEventListener ("click", function () {
