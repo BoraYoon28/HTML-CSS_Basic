@@ -47,6 +47,25 @@ body {
 	font-size: var(--text-base);
 }
 
+.skip {
+		overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9300;
+    padding: .6rem 1.2rem;
+    background-color: #00256c;
+    font-size: var(--text-sm);
+    transform: translateY(-100%);
+		color: var(--white);
+		white-space: nowrap;
+}
+
+.skip:focus {
+	transform: translateY(0);
+	transition: transform .2s;
+}
+
 header {
 	justify-content: space-between;
 	margin-top: min(8%, 2.5rem);
@@ -104,7 +123,7 @@ main {
 	justify-content: center;
 }
 
-.button-sign button, a {
+.button-sign button, .button-sign a {
 	width: 5rem;
 	border-radius: 0.625rem;
 	font-size: var(--text-base);
