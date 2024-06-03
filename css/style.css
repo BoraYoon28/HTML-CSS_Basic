@@ -284,7 +284,7 @@ section {
 	height: min(8vw, 2.3rem);
 }
 
-.question p {
+.question span:nth-child(1) {
 	margin-right: 0.8rem;
 	font-size: var(--text-lg);
 	font-weight: 700;
@@ -341,8 +341,8 @@ section {
 	justify-content: space-between;
 }
 
-.member-name p {
-	font-size: var(--text-base);
+.member-name span:nth-child(1) {
+	font-size: var(--text-sm);
 	font-weight: 700;
 }
 
@@ -486,7 +486,8 @@ section {
 		padding: 0rem 3.125rem;
 	}
 
-	footer .grid {
+	footer section {
+		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		gap: 1.25rem;
 	}
